@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  nkn:
+    container_name: nkn
+    image: nknorg/nkn
+    command: nknd --password-file wallet.pswd
+    restart: always
+    volumes:
+      - ./wallet.json:/nkn/data/wallet.json:ro
+      - ./wallet.pswd:/nkn/data/wallet.pswd:ro
+      - ./config.json:/nkn/data/config.json:ro
+      - ./ChainDB:/nkn/data/ChainDB
+    ports:
+      - "30001-30021:30001-30021"
