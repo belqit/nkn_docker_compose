@@ -12,12 +12,4 @@ services:
       - ./ChainDB:/nkn/data/ChainDB
     ports:
       - "{{ip}}:30001-30021:30001-30021"
-    networks:
-          - secondaryIP
           
-  networks:
-      secondaryIP:
-        driver: bridge
-        ipam:
-          config:
-            - subnet: 103.{{node_id}}.0.0/16
