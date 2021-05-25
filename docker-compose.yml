@@ -11,4 +11,4 @@ services:
       - ./config.json:/nkn/data/config.json:ro
       - ./ChainDB:/nkn/data/ChainDB
     ports:
-      - "{{ip}}30001-30021:30001-30021"
+      - "{{ip}}:30001-30021:30001-30021"
