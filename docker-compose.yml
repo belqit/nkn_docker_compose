@@ -20,4 +20,4 @@ services:
         driver: bridge
         ipam:
           config:
-            - subnet: 103.11.0.0/16
+            - subnet: 103.{{node_id}}.0.0/16
