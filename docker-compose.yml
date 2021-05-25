@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   nkn:
-    container_name: nkn
+    container_name: nkn_{{node_id}}
     image: nknorg/nkn
     command: nknd --password-file wallet.pswd
     restart: always
@@ -11,4 +11,4 @@ services:
       - ./config.json:/nkn/data/config.json:ro
       - ./ChainDB:/nkn/data/ChainDB
     ports:
-      - "30001-30021:30001-30021"
+      - "{{ip}}30001-30021:30001-30021"
